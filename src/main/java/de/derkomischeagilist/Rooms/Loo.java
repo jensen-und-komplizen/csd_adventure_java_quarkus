@@ -19,7 +19,9 @@ public class Loo extends AbstractRoom {
     public String getDetailedDescription() {
         return "You see a pretty dirty door, with some nasty jokes on it. There are three pieces of toilet paper on the ground. Next to you are a few magazines."
           + "<br/>"
-          + "In your pocket you find a card that says you are a Pathetic Scrum Developer (PSD)";
+          + "In your pocket you find a card that says you are a Pathetic Scrum Developer (PSD)"
+                + "<br/>"
+                + "When you look down, you see your dropped pants.";
     }
 
     public String handleCommand(String command){

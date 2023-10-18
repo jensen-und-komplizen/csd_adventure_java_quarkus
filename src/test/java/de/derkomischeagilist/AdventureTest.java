@@ -1,6 +1,5 @@
 package de.derkomischeagilist;
 
-import org.junit.Ignore;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -66,6 +65,18 @@ public class AdventureTest {
         assertThat(actual, containsStringIgnoringCase("pathetic scrum developer"));
         assertThat(actual, containsStringIgnoringCase("card"));
     }
+
+    @Test
+    void LookingAroundInTheLooThenYouSeeYourDroppedPants() {
+        //given i am on the loo
+        assertThat(adventure.Begin(), containsStringIgnoringCase("you wake up on the Loo"));
+        //When i look around
+        String actual = adventure.tell("look around");
+        //Then i can see magazines
+        assertThat(actual, containsStringIgnoringCase("when you look down"));
+        assertThat(actual, containsStringIgnoringCase("dropped pants"));
+    }
+
 
     @Test
     void LookingAtMagazinesInTheLooThenICanSeeAScrumGuide() {
