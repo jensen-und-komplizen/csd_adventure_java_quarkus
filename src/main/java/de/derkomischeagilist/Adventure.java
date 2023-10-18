@@ -34,7 +34,7 @@ public class Adventure {
                 currentRoom = loo;
                 response = currentRoom.getDescription();
                 break;
-            case "read a joke":
+            case "read joke":
                 if (currentRoom == loo) {
                     response = "Why do we tell actors to 'break a leg?' - Because every play has a cast ;)";
                 } else {

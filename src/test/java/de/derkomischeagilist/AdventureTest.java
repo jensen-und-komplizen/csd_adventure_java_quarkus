@@ -246,7 +246,7 @@ public class AdventureTest {
     void readAJokeOnLooSuccessful(){
         //given I am on the loo
         assertThat(adventure.Begin(), containsStringIgnoringCase("you wake up on the Loo"));
-        String actual = adventure.tell("read a joke");
+        String actual = adventure.tell("read joke");
         assertThat(actual, containsStringIgnoringCase("Why do we tell actors to 'break a leg?' - Because every play has a cast ;)"));
     }
 
@@ -255,7 +255,7 @@ public class AdventureTest {
         //given I am on the loo
         assertThat(adventure.Begin(), containsStringIgnoringCase("you wake up on the Loo"));
         adventure.currentRoom = adventure.washroom;
-        String actual = adventure.tell("read a joke");
+        String actual = adventure.tell("read joke");
         assertThat(actual, containsStringIgnoringCase("There is no joke in this room."));
     }
 
@@ -271,7 +271,7 @@ public class AdventureTest {
     void readAJokeOnLooAndCommitSuicide(){
         //given I am on the loo
         assertThat(adventure.Begin(), containsStringIgnoringCase("you wake up on the Loo"));
-        String actual = adventure.tell("read a joke");
+        String actual = adventure.tell("read joke");
         assertThat(actual, containsStringIgnoringCase("Why do we tell actors to 'break a leg?' - Because every play has a cast ;)"));
         actual = adventure.tell("commit suicide");
         assertThat(actual, containsStringIgnoringCase("you wake up on the Loo"));
