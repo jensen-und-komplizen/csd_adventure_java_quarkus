@@ -15,6 +15,9 @@ public class Adventure {
     private Room kitchen;
     private String lastResponse;
 
+    private String[] jokes = new String[] {"Why do we tell actors to 'break a leg?' - Because every play has a cast ;)", "Chuck Norris wins at Planning Poker."};
+    int jokeCounter = 0;
+
     public Adventure() {
         loo = new Loo();
         washroom = new WashRoom();
@@ -36,14 +39,7 @@ public class Adventure {
                 break;
             case "read a joke":
                 if (currentRoom == loo) {
-                    response = "Why do we tell actors to 'break a leg?' - Because every play has a cast ;)";
-                } else {
-                    response = "There is no joke in this room.";
-                }
-                break;
-            case "read another joke":
-                if (currentRoom == loo) {
-                    response = "Chuck Norris wins at Planning Poker.";
+                    response = jokes[jokeCounter++ % jokes.length];
                 } else {
                     response = "There is no joke in this room.";
                 }
@@ -96,7 +92,10 @@ public class Adventure {
         lastResponse += "\nIf you want to play the game, enter commands into the textbox. If you're feeling lost use the command 'help'";
         return lastResponse;
     }
-
+    public String Begin(String joke) {
+        jokes = new String[]{joke};
+        return Begin();
+    }
     public Location whereAreWe() {
         if(currentRoom.getDescription().equals("You enter a room that looks like a wash room.")){
             return Location.WASHROOM;
