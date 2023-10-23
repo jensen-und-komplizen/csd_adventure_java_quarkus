@@ -40,7 +40,7 @@ public class Hallway extends AbstractRoom {
             case "use keypad":
             case "use rusty keypad":
                 activateKeypad();
-                return "You need to enter the number of the scrum values. If you have no clue, take a look around.";
+                return "You need to enter the number of the Scrum values. If you have no clue, take a look around.";
             default: {
                 return handleDefaultCase(command);
             }
