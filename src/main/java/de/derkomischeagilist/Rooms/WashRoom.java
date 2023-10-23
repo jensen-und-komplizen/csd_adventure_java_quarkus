@@ -3,7 +3,7 @@ package de.derkomischeagilist.Rooms;
 public class WashRoom extends AbstractRoom {
 
     public String getDescription() {
-        return "You enter a room that looks like a wash room.";
+        return "You enter a room that looks like a washroom.";
     }
 
     public String getDetailedDescription() {

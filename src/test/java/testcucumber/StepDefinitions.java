@@ -37,7 +37,7 @@ public class StepDefinitions {
 
         lastResponse = adventure.tell("use door to washroom");
 
-        assertThat(lastResponse, containsStringIgnoringCase("looks like a wash room"));
+        assertThat(lastResponse, containsStringIgnoringCase("looks like a washroom"));
     }
     @When("I say {string}")
     public void i_say(String string) {
