@@ -41,6 +41,13 @@ public class Adventure {
                     response = "There is no joke in this room.";
                 }
                 break;
+            case "read another joke":
+                if (currentRoom == loo) {
+                    response = "Chuck Norris wins at Planning Poker.";
+                } else {
+                    response = "There is no joke in this room.";
+                }
+                break;
             case "look around":
                 response = currentRoom.getDetailedDescription();
                 break;
