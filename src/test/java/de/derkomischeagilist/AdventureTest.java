@@ -56,6 +56,7 @@ public class AdventureTest {
         assertThat(actual, not(containsStringIgnoringCase("coin")));
     }
 
+
     @Test
     void LookingAroundInTheLooThenIWillFindScrumDeveloperCard() {
         //given i am on the loo
@@ -63,7 +64,7 @@ public class AdventureTest {
         //When i look around
         String actual = adventure.tell("look around");
         //Then i can see magazines
-        assertThat(actual, containsStringIgnoringCase("pathetic scrum developer"));
+        assertThat(actual, containsString("Pathetic Scrum Developer"));
         assertThat(actual, containsStringIgnoringCase("card"));
     }
 
@@ -74,7 +75,7 @@ public class AdventureTest {
         //When i look around
         String actual = adventure.tell("look at magazines");
         //Then i can see magazines
-        assertThat(actual, containsStringIgnoringCase("scrum guide"));
+        assertThat(actual, containsString("Scrum guide"));
     }
 
     @Test
@@ -333,7 +334,7 @@ public class AdventureTest {
         actual = adventure.tell("inspect the spooky door");
         assertThat(actual, containsStringIgnoringCase("number of Scrum values"));
         actual = adventure.tell("use keypad");
-        assertThat(actual, containsStringIgnoringCase("number of the scrum values"));
+        assertThat(actual, containsString("number of the Scrum values"));
         actual = adventure.tell("5");
         assertThat(actual, containsStringIgnoringCase("You made it"));
     }
@@ -346,7 +347,7 @@ public class AdventureTest {
         // when I use the keypad
         String actual = adventure.tell("use keypad");
         // i see the description of the keypad
-        assertThat(actual, containsStringIgnoringCase("number of the scrum values"));
+        assertThat(actual, containsString("number of the Scrum values"));
         actual = adventure.tell("10");
         assertThat(actual, containsStringIgnoringCase("but nothing happens"));
     }
