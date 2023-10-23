@@ -251,6 +251,14 @@ public class AdventureTest {
     }
 
     @Test
+    void readAnotherJokeOnLooSuccessful(){
+        //given I am on the loo
+        assertThat(adventure.Begin(), containsStringIgnoringCase("you wake up on the Loo"));
+        String actual = adventure.tell("read another joke");
+        assertThat(actual, containsStringIgnoringCase("Chuck Norris wins at Planning Poker."));
+    }
+
+    @Test
     void readAJokeInWashroomUnsuccesfull(){
         //given I am on the loo
         assertThat(adventure.Begin(), containsStringIgnoringCase("you wake up on the Loo"));
