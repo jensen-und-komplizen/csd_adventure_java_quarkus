@@ -8,6 +8,11 @@ Feature: We want help
     And I see "use door to washroom"
     And I see "look at magazines"
 
+  Scenario: look around on the loo
+    Given I am on the loo
+    When I look around
+    Then I see hints for interactable objects
+
   Scenario: help in the washroom
     Given I am in the washroom
     When I ask for help

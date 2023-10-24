@@ -133,4 +133,9 @@ public class StepDefinitions {
         adventure.tell("connect power");
         adventure.tell("put in cup");
     }
+
+    @Then("I see hints for interactable objects")
+    public void iSeeHintsForInteractableObjects() {
+        assertThat(lastResponse, containsStringIgnoringCase("<span class=\"hint\">"));
+    }
 }
