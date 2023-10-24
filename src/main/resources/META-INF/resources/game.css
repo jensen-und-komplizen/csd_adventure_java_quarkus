@@ -6,6 +6,11 @@ body {
 
 }
 
+.hint {
+    color: orange;
+    font-weight: bold;
+}
+
 .container {
     width: 50%;
     margin-left: 25%;
