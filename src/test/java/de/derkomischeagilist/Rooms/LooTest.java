@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class LooTest {
     Loo loo = new Loo();
     String lookAtDoor = "look at door";
+
     @Test
     void handleCommandHandelsLookAtDoor() {
         String result = loo.handleCommand(lookAtDoor);
@@ -16,5 +17,11 @@ class LooTest {
     void getHelpContainsLookAtDoor() {
         String result = loo.getHelp();
         assertTrue(result.toLowerCase().contains(lookAtDoor));
+    }
+
+    @Test
+    void testLookAtMagazineHighlighting() {
+        Loo loo = new Loo();
+        assertTrue(loo.handleCommand("look at magazines").contains("<span class=\"hint\">Scrum Guide 2009</span>"));
     }
 }

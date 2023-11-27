@@ -25,7 +25,7 @@ public class Loo extends AbstractRoom {
     public String handleCommand(String command){
         switch(command.toLowerCase()) {
             case "look at magazines":
-                return "You see a very much used Micky Mouse magazine, a very old and unusable playboy and what seems to be a Scrum Guide 2009 in mint condition.";
+                return "You see a very much used Micky Mouse magazine, a very old and unusable playboy and what seems to be a <span class=\"hint\">Scrum Guide 2009</span> in mint condition.";
             case "look at toilet paper":
                 toiletPaperCount++;
                 switch (toiletPaperCount) {
