@@ -11,7 +11,9 @@ public class WashRoom extends AbstractRoom {
                 + "<br/>"
                 + "You notice a DoD on the door."
                 + "</br>"
-                + "On the other side of the room you see another door.";
+                + "On the other side of the room you see another door."
+                + "</br>"
+                + "On the floor you see a coin.";
     }
 
     public String handleCommand(String command) {
