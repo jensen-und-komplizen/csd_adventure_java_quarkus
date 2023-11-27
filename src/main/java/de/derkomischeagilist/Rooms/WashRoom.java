@@ -17,7 +17,7 @@ public class WashRoom extends AbstractRoom {
     public String getDetailedDescription() {
         return "You see an incredibly nasty sink with an undefinable substance in it. Ew!"
                 + "<br/>"
-                + "There is a bin next to the sink."
+                + "There is a <span class=\"hint\">bin</span> next to the sink."
                 + "<br/>"
                 + "You notice a  <span class=\"hint\">DoD</span> on the door."
                 + "</br>"

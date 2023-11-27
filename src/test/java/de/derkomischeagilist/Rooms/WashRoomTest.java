@@ -13,13 +13,13 @@ class WashRoomTest {
     void showPaperBinInLookAroundInWashroom() {
         adventure.tell("use door to washroom");
         String result = adventure.tell("look around");
-        assert(result.contains("There is a bin next to the sink."));
+        assert(result.contains("There is a <span class=\"hint\">bin</span> next to the sink."));
     }
     @Test
     void showContentOfBinWhenLookingAtBin() {
         adventure.tell("use door to washroom");
         String result = adventure.tell("look at bin");
-        assert(result.contains("There are used papertowels in here."));
+        assert(result.contains("You walk closer to the bin. It is very dirty and smells like a wet dog. Inside you see a lot of used paper towels. No one would reach in here."));
     }
 
     @Test
