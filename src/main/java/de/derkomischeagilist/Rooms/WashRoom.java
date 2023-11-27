@@ -6,7 +6,6 @@ public class WashRoom extends AbstractRoom {
 
     private final Bin bin;
 
-
     public WashRoom() {
         this.bin = new Bin();
     }
@@ -20,7 +19,7 @@ public class WashRoom extends AbstractRoom {
                 + "<br/>"
                 + "There is a bin next to the sink."
                 + "<br/>"
-                + "You notice a DoD on the door."
+                + "You notice a  <span class=\"hint\">DoD</span> on the door."
                 + "</br>"
                 + "On the other side of the room you see another door."
                 + "</br>"
@@ -44,6 +43,7 @@ public class WashRoom extends AbstractRoom {
 
     @Override
     public String getHelp() {
-        return "Try to type 'look around', 'read DoD', or 'use door to hallway', or 'use door to loo'." + super.getHelp();
+        return "Try to type 'look around', 'read DoD', or 'use door to hallway', or 'use door to loo'."
+                + super.getHelp();
     }
 }

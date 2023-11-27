@@ -202,7 +202,7 @@ public class AdventureTest {
         //When I look around
         String actual = adventure.tell("look around");
         //Then I find the DoD
-        assertThat(actual, containsStringIgnoringCase("you notice a dod on the door"));
+        assertThat(actual, containsStringIgnoringCase("you notice a  <span class=\"hint\">dod</span> on the door"));
     }
 
     @Test
