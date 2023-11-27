@@ -56,7 +56,7 @@ public class AdventureTest {
         assertThat(adventure.Begin(), containsStringIgnoringCase("you wake up on the Loo"));
         //When i look around
         String actual = adventure.tell("look around");
-        //Then i can't see the coin
+        //Then i can see the coin
         assertThat(actual, containsStringIgnoringCase("coin"));
     }
 
