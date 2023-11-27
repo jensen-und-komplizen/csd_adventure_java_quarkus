@@ -36,7 +36,9 @@ public class Loo extends AbstractRoom {
                         toiletPaperCount = 0;
                         return "On the last piece is written: \"Developers: We have too many meetings.\" I remember. I need to find my Scrum team to help them get out of here.";
                 }
-                case "go through door":
+            case "look at door":
+                return "You see a door. It leads to the WashRoom.";
+            case "go through door":
 
             default:
                 return
@@ -48,6 +50,6 @@ public class Loo extends AbstractRoom {
     }
 
     public String getHelp() {
-        return "Try to 'look around', 'look at magazines' (better get your gloves), 'look at toilet paper', 'read a joke' or just 'use door to washroom' to escape the smell." + super.getHelp();
+        return "Try to 'look around', 'look at magazines' (better get your gloves), 'look at door', 'look at toilet paper', 'read a joke' or just 'use door to washroom' to escape the smell." + super.getHelp();
     }
 }
