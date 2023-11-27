@@ -1,6 +1,15 @@
 package de.derkomischeagilist.Rooms;
 
+import de.derkomischeagilist.Items.Bin;
+
 public class WashRoom extends AbstractRoom {
+
+    private final Bin bin;
+
+
+    public WashRoom() {
+        this.bin = new Bin();
+    }
 
     public String getDescription() {
         return "You enter a room that looks like a washroom.";
@@ -8,6 +17,8 @@ public class WashRoom extends AbstractRoom {
 
     public String getDetailedDescription() {
         return "You see an incredibly nasty sink with an undefinable substance in it. Ew!"
+                + "<br/>"
+                + "There is a bin next to the sink."
                 + "<br/>"
                 + "You notice a DoD on the door."
                 + "</br>"
@@ -24,6 +35,8 @@ public class WashRoom extends AbstractRoom {
                         "paper towels in bin?" +
                         "</br>" +
                         "toilet flushed?";
+            case "look at bin":
+                return bin.getDescription();
             default:
                 return super.handleCommand(command);
         }
