@@ -17,7 +17,7 @@ public class Loo extends AbstractRoom {
     }
 
     public String getDetailedDescription() {
-        return "You see a pretty dirty <span class=\"hint\">door</span> with some nasty <span class=\"hint\">jokes</span> on it. There are three pieces of <span class=\"hint\">toilet paper</span> and a coin on the ground. Next to you are a few <span class=\"hint\">magazines</span>."
+        return "You see a pretty dirty <span class=\"hint\">door</span> with some nasty <span class=\"hint\">jokes</span> on it. There are four pieces of <span class=\"hint\">toilet paper</span> and a coin on the ground. Next to you are a few <span class=\"hint\">magazines</span>."
           + "<br/>"
           + "In your pocket you find a card that says you are a Pathetic Scrum Developer (PSD)";
     }
@@ -34,7 +34,7 @@ public class Loo extends AbstractRoom {
                 switch (toiletPaperCount) {
                     case 1: return "On the first piece is written: \"Scrum Master: Nobody ever comes to my retros... I need to get out of here.\" There are more pieces on the ground.";
                     case 2: return "Another one states: \"A foo walks into a bar.\" More to read on the floor.";
-                    case 3: return "Next pices says: \"Product Owner: My developers are way too slow.\" There is one more piece on the ground.";
+                    case 3: return "Next piece says: \"Product Owner: My developers are way too slow.\" There is one more piece on the ground.";
                     case 4:
                         toiletPaperCount = 0;
                         return "On the last piece is written: \"Developers: We have too many meetings.\" I remember. I need to find my Scrum team to help them get out of here.";
