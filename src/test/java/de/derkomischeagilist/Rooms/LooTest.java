@@ -28,11 +28,11 @@ class LooTest {
     @Test
     void testReadScrumGuide2009() {
         Loo loo = new Loo();
-        assertTrue(loo.handleCommand("read scrum guide 2009").contains("better Scrum Master"));
+        assertTrue(loo.handleCommand("read scrum guide 2009").contains("better Scrum Developer"));
     }
     @Test
     void testReadScrumGuide() {
         Loo loo = new Loo();
-        assertTrue(loo.handleCommand("read scrum guide").contains("better Scrum Master"));
+        assertTrue(loo.handleCommand("read scrum guide").contains("better Scrum Developer"));
     }
 }

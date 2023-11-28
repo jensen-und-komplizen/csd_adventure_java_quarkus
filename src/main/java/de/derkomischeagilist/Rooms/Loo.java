@@ -28,7 +28,7 @@ public class Loo extends AbstractRoom {
                 return "You see a very much used Micky Mouse magazine, a very old and unusable playboy and what seems to be a <span class=\"hint\">Scrum Guide 2009</span> in mint condition.";
             case "read scrum guide 2009":
             case "read scrum guide":
-                return "You read the Scrum Guide 2009. It is very interesting. You learn a lot about Scrum. You feel like you are a better Scrum Master now. You feel like there might be a newer version with updates and more innovations around";
+                return "You read the Scrum Guide 2009. It is very interesting. You learned a lot about Scrum. You feel like you are a better Scrum Developer now. You feel like there might be a newer version with updates and more innovations around.";
             case "look at toilet paper":
                 toiletPaperCount++;
                 switch (toiletPaperCount) {
