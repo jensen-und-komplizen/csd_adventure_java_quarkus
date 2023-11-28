@@ -19,7 +19,21 @@ class WashRoomTest {
     void showContentOfBinWhenLookingAtBin() {
         adventure.tell("use door to washroom");
         String result = adventure.tell("look at bin");
-        assert(result.contains("You walk closer to the bin. It is very dirty and smells like a wet dog. Inside you see a lot of used paper towels. No one would reach in here."));
+        assert(result.contains("You walk closer to the bin. It is very dirty and smells like a old wet chicken. Inside you see a lot of used paper towels. No one would reach in here."));
+    }
+
+    @Test
+    void showDifferentContentOfBinWhenLookingAtBinTwice() {
+        adventure.tell("use door to washroom");
+        String result = adventure.tell("look at bin");
+        assert(result.contains("You walk closer to the bin. It is very dirty and smells like an old wet chicken. Inside you see a lot of used paper towels. No one would reach in here."));
+        result = adventure.tell("look at bin");
+        assert(result.contains("It still smells like an old wet chicken."));
+        result = adventure.tell("look at bin");
+        assert(result.contains("It still smells like an old wet chicken."));
+        result = adventure.tell("look at bin");
+        assert(result.contains("Please you don't want to smell it anymore."));
+
     }
 
     @Test
