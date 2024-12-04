@@ -40,12 +40,12 @@ public class Loo extends AbstractRoom {
                         return "On the last piece is written: \"Developers: We have too many meetings.\" I remember. I need to find my Scrum team to help them get out of here.";
                 }
             case "look at door":
-                return "You see a door. It leads to the WashRoom.";
+                return "You see a door. It leads to the washroom.";
             case "go through door":
 
             default:
                 return
-                   "you wake up on the Loo"
+                   "you wake up on the loo"
                    + "\n"
                    + super.handleCommand(command);
         }
