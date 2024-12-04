@@ -50,6 +50,14 @@ public class AdventureTest {
     }
 
     @Test
+    void LookAtTheDoorInTheLoo() {
+        //When I look at the door
+        String actual = adventure.tell("look at door");
+        //Then there is shown, that it is a washroom
+        assertThat(actual, containsStringIgnoringCase("washroom"));
+    }
+
+    @Test
     void LookingAroundInTheLooThenICanSeeACoin() {
         //given i am on the loo
         assertThat(adventure.Begin(), containsStringIgnoringCase("you wake up on the Loo"));
