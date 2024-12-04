@@ -35,4 +35,5 @@ class LooTest {
         Loo loo = new Loo();
         assertTrue(loo.handleCommand("read scrum guide").contains("better Scrum Developer"));
     }
+
 }

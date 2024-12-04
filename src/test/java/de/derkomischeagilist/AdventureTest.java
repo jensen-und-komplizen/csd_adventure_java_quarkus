@@ -271,6 +271,14 @@ public class AdventureTest {
     }
 
     @Test
+    void readThirdJokeOnLooSuccessful(){
+        //given I am on the loo
+        assertThat(adventure.Begin("Why don't scientists trust atoms? Because they make up everything!"), containsStringIgnoringCase("you wake up on the Loo"));
+        String actual = adventure.tell("read a joke");
+        assertThat(actual, containsStringIgnoringCase("Why don't scientists trust atoms? Because they make up everything!"));
+    }
+
+    @Test
     void readAJokeInWashroomUnsuccesfull(){
         //given I am on the loo
         assertThat(adventure.Begin(), containsStringIgnoringCase("you wake up on the Loo"));
