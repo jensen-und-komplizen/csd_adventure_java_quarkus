@@ -28,7 +28,7 @@ public class AdventureTest {
 
     @Test
     void AdventureStartsOnTheLoo() {
-        assertThat(adventure.Begin(), containsStringIgnoringCase("you wake up on the Loo"));
+        assertThat(adventure.Begin(), containsString("You wake up on the loo"));
     }
 
     @Test
