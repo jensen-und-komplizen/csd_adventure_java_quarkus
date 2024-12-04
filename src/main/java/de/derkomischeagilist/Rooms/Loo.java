@@ -45,7 +45,7 @@ public class Loo extends AbstractRoom {
 
             default:
                 return
-                   "you wake up on the Loo"
+                   "you wake up on the loo"
                    + "\n"
                    + super.handleCommand(command);
         }
