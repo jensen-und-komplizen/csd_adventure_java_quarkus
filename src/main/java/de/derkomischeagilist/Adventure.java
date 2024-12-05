@@ -15,7 +15,12 @@ public class Adventure {
     private Room kitchen;
     private String lastResponse;
 
-    private String[] jokes = new String[] {"Why do we tell actors to 'break a leg?' - Because every play has a cast ;)", "Chuck Norris wins at Planning Poker.", "Was liegt am Strand und ist schwer zu verstehen? Eine Nuschel!"};
+    private String[] jokes = new String[] {
+        "Why do we tell actors to 'break a leg?' - Because every play has a cast ;)",
+        "Chuck Norris wins at Planning Poker.",
+        "Why don't scientists trust atoms? Because they make up everything!"
+    };
+    
     int jokeCounter = 0;
 
     public Adventure() {
