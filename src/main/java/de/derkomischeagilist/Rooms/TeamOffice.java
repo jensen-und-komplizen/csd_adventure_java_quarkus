@@ -1,6 +1,10 @@
 package de.derkomischeagilist.Rooms;
 
+import de.derkomischeagilist.Adventure;
+import org.junit.jupiter.api.Test;
+
 public class TeamOffice extends AbstractRoom {
+
     @Override
     public String getDescription() {
         return "This is a very stinky room. Smells like real work. \n" +
@@ -22,4 +26,6 @@ public class TeamOffice extends AbstractRoom {
     public String getHelp() {
         return "Try to type 'look around' or 'use door to hallway'." + super.getHelp();
     }
+
+
 }

@@ -181,6 +181,38 @@ public class AdventureTest {
     }
 
     @Test
+    void StartingInLooShowsDetail() {
+        //Show details when beginning in the room
+        assertThat(adventure.Begin(), containsStringIgnoringCase("see a pretty dirty"));
+    }
+
+    @Test
+    void EnteringTeamOfficeShowsDetail() {
+        //When I go into the TeamOffice
+        String actual = adventure.tell("use door to team office");
+        //Then i can see a sink and a door
+        assertThat(actual, containsStringIgnoringCase("many flip charts"));
+    }
+
+    @Test
+    void EnteringKitchenShowsDetail() {
+        //When I go into the Kitchen
+        String actual = adventure.tell("use door to kitchen");
+        //Then i can see a sink and a door
+        assertThat(actual, containsStringIgnoringCase("It might be the kitchen"));
+
+    }
+
+    @Test
+    void EnteringHallwayShowsDetail() {
+        //When I go into the Hallway
+        String actual = adventure.tell("use door to hallway");
+        //Then i can see a sink and a door
+        assertThat(actual, containsStringIgnoringCase("very dark hallway to hell"));
+
+    }
+
+    @Test
     void GoingThroughDoorInTheTeamRoomThenMyTeammatesAreSmartAndSmelly() {
         //given i am on the loo
         assertThat(adventure.Begin(), containsStringIgnoringCase("you wake up on the Loo"));

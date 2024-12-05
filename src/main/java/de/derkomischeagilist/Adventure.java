@@ -35,7 +35,7 @@ public class Adventure {
             case "commit suicide":
                 loo.resetCounter();
                 currentRoom = loo;
-                response = currentRoom.getDescription();
+                response = currentRoom.getDescription() + "\n\n" + currentRoom.getDetailedDescription();
                 break;
             case "read a joke":
                 if (currentRoom == loo) {
@@ -53,25 +53,25 @@ public class Adventure {
                 break;
             case "use door to washroom":
                 currentRoom = washroom;
-                response = currentRoom.getDescription();
+                response = currentRoom.getDescription() + "\n\n" + currentRoom.getDetailedDescription();
                 break;
             case "use door to hallway":
                 hallway.resetKeypad();
                 currentRoom = hallway;
-                response = currentRoom.getDescription();
+                response = currentRoom.getDescription() + "\n\n" + currentRoom.getDetailedDescription();
                 break;
             case "use door to loo":
                 loo.resetCounter();
                 currentRoom = loo;
-                response = "You are on the loo again. Still smelly.";
+                response = "You are on the loo again. Still smelly." + "\n\n" + currentRoom.getDetailedDescription();
                 break;
             case "use door to team office":
                 currentRoom = teamOffice;
-                response = currentRoom.getDescription();
+                response = currentRoom.getDescription() + "\n\n" + currentRoom.getDetailedDescription();
                 break;
             case "use door to kitchen":
                 currentRoom = kitchen;
-                response = currentRoom.getDescription();
+                response = currentRoom.getDescription() + "\n\n" + currentRoom.getDetailedDescription();
                 break;
             case "help":
                 response = currentRoom.getHelp();
@@ -89,7 +89,8 @@ public class Adventure {
 
     public String Begin() {
         lastResponse = currentRoom.getDescription();
-        lastResponse += "\nIf you want to play the game, enter commands into the textbox. If you're feeling lost use the command 'help'";
+        lastResponse += "\nIf you want to play the game, enter commands into the textbox. If you're feeling lost use the command 'help'.\n\n";
+        lastResponse += currentRoom.getDetailedDescription();
         return lastResponse;
     }
     public String Begin(String joke) {

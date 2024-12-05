@@ -1,5 +1,7 @@
 package de.derkomischeagilist.Rooms;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.containsStringIgnoringCase;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import de.derkomischeagilist.Adventure;
@@ -9,6 +11,14 @@ class WashRoomTest {
 
   Adventure adventure = new Adventure();
   WashRoom washRoom = new WashRoom();
+
+  @Test
+  void EnteringWashroomShowsDetail() {
+    //When I go into the washroom
+    String actual = adventure.tell("use door to washroom");
+    //Then i can see a sink and a door
+    assertThat(actual, containsStringIgnoringCase("incredibly nasty sink"));
+  }
 
   @Test
   void showPaperBinInLookAroundInWashroom() {
