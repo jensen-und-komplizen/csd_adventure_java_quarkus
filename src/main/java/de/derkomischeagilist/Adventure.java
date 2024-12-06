@@ -2,8 +2,6 @@ package de.derkomischeagilist;
 
 import de.derkomischeagilist.Rooms.*;
 
-import java.util.Locale;
-
 public class Adventure {
 
     private int counter;
