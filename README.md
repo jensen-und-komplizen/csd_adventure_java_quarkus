@@ -1,6 +1,6 @@
 # csd-java-quarkus Project
 
-## Vorbereitungen A-CSD 25./26. Juli
+## Vorbereitungen
 
 Um bestens auf den bevorstehenden Kurs vorbereitet zu sein, kannst du folgendes tun:
 1. Klone dieses Projekt und prüfe, ob du das Projekt bauen und ausführen kannst (s. [run dev server with hot reload for development](#run dev server with hot reload for development))
