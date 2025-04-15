@@ -1,5 +1,6 @@
 package de.derkomischeagilist;
 
+import org.hamcrest.CoreMatchers;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -50,7 +51,7 @@ public class AdventureTest {
         //When I look at the door
         String actual = adventure.tell("look at door");
         //Then there is shown, that it is a washroom
-        assertThat(actual, containsStringIgnoringCase("washroom"));
+        assertThat(actual, CoreMatchers.containsString("washroom"));
     }
 
     @Test
