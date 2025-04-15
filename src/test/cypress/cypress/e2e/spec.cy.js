@@ -17,7 +17,7 @@ describe('breadcrumbs', () => {
   })
   it('says "you are in the washroom" in the second room', () => {
       cy.visit('/game')
-      cy.get('#command').type('use door to washroom{enter}')
+      cy.get('#command').type('go to washroom{enter}')
       cy.get('h1').contains('you are in the washroom')
     })
 })

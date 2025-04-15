@@ -15,28 +15,28 @@ class WashRoomTest {
   @Test
   void EnteringWashroomShowsDetail() {
     //When I go into the washroom
-    String actual = adventure.tell("use door to washroom");
+    String actual = adventure.tell("go to washroom");
     //Then i can see a sink and a door
     assertThat(actual, containsStringIgnoringCase("incredibly nasty sink"));
   }
 
   @Test
   void showPaperBinInLookAroundInWashroom() {
-    adventure.tell("use door to washroom");
+    adventure.tell("go to washroom");
     String result = adventure.tell("look around");
     assert (result.contains("There is a <span class=\"hint\">bin</span> next to the sink."));
   }
 
   @Test
   void showLooDoorInLookAroundInWashroom() {
-    adventure.tell("use door to washroom");
+    adventure.tell("go to washroom");
     String result = adventure.tell("look around");
     assert (result.contains("There is a door to the <span class=\"hint\">loo</span>."));
   }
 
   @Test
   void showContentOfBinWhenLookingAtBin() {
-    adventure.tell("use door to washroom");
+    adventure.tell("go to washroom");
     String result = adventure.tell("look at bin");
     assert (result.contains(
         "You walk closer to the bin. It is very dirty and smells like an old wet chicken. Inside you see a lot of used paper towels. No one would reach in here."));
@@ -44,7 +44,7 @@ class WashRoomTest {
 
   @Test
   void showDifferentContentOfBinWhenLookingAtBinTwice() {
-    adventure.tell("use door to washroom");
+    adventure.tell("go to washroom");
     String result = adventure.tell("look at bin");
     assert (result.contains(
         "You walk closer to the bin. It is very dirty and smells like an old wet chicken. Inside you see a lot of used paper towels. No one would reach in here."));

@@ -54,25 +54,25 @@ public class Adventure {
                 counter++;
                 response = "The counter is at " + counter;
                 break;
-            case "use door to washroom":
+            case "go to washroom":
                 currentRoom = washroom;
                 response = currentRoom.getDescription() + "\n\n" + currentRoom.getDetailedDescription();
                 break;
-            case "use door to hallway":
+            case "go to hallway":
                 hallway.resetKeypad();
                 currentRoom = hallway;
                 response = currentRoom.getDescription() + "\n\n" + currentRoom.getDetailedDescription();
                 break;
-            case "use door to loo":
+            case "go to loo":
                 loo.resetCounter();
                 currentRoom = loo;
                 response = "You are on the loo again. Still smelly." + "\n\n" + currentRoom.getDetailedDescription();
                 break;
-            case "use door to team office":
+            case "go to team office":
                 currentRoom = teamOffice;
                 response = currentRoom.getDescription() + "\n\n" + currentRoom.getDetailedDescription();
                 break;
-            case "use door to kitchen":
+            case "go to kitchen":
                 currentRoom = kitchen;
                 response = currentRoom.getDescription() + "\n\n" + currentRoom.getDetailedDescription();
                 break;
