@@ -43,13 +43,20 @@ class WashRoomTest {
     assert (result.contains("There is a door to the <span class=\"hint\">loo</span>."));
   }
 
-  @Test
-  void showContentOfBinWhenLookingAtBin() {
-    adventure.tell("go to washroom");
-    String result = adventure.tell("look at bin");
-    assert (result.contains(
-        "You walk closer to the bin. It is very dirty and smells like an old wet chicken. Inside you see a lot of used paper towels. No one would reach in here."));
-  }
+    @Test
+    void showDodInWashroom() {
+        adventure.tell("go to washroom");
+        String result = adventure.tell("read dod");
+        assert (result.contains("Things to do before you leave the washroom:"));
+    }
+
+    @Test
+    void showContentOfBinWhenLookingAtBin() {
+        adventure.tell("go to washroom");
+        String result = adventure.tell("look at bin");
+        assert (result.contains(
+                "You walk closer to the bin. It is very dirty and smells like an old wet chicken. Inside you see a lot of used paper towels. No one would reach in here."));
+    }
 
   @Test
   void showDifferentContentOfBinWhenLookingAtBinTwice() {
