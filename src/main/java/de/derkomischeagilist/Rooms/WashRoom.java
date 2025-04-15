@@ -6,11 +6,13 @@ import de.derkomischeagilist.Items.Door;
 public class WashRoom extends AbstractRoom {
 
     private final Bin bin;
+    private boolean coinPickedUp;
 
     private final Door door;
 
     public WashRoom() {
         this.bin = new Bin();
+        this.coinPickedUp = false;
         this.door = new Door();
     }
 
@@ -29,7 +31,7 @@ public class WashRoom extends AbstractRoom {
                 + "</br>"
                 + "On the other side of the room you see another <span class=\"hint\">door</span>."
                 + "</br>"
-                + "On the floor you see a coin.";
+                + (coinPickedUp ? "" : "On the floor you see a <span class=\"hint\">coin</span>.");
     }
 
     public String handleCommand(String command) {
@@ -43,6 +45,12 @@ public class WashRoom extends AbstractRoom {
                         "Toilet flushed?";
             case "look at bin":
                 return bin.getDescription();
+            case "pick up coin":
+                if (coinPickedUp) {
+                    return "You already picked up the coin.";
+                }
+                coinPickedUp = true;
+                return "You picked up the coin.";
             case "look at door":
                 return door.getDescription();
             default:

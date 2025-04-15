@@ -3,9 +3,11 @@ package de.derkomischeagilist.Rooms;
 public class Loo extends AbstractRoom {
 
     private int toiletPaperCount;
+    private boolean coinPickedUp;
 
     public Loo() {
         toiletPaperCount = 0;
+        this.coinPickedUp = false;
     }
 
     public void resetCounter() {
@@ -17,7 +19,8 @@ public class Loo extends AbstractRoom {
     }
 
     public String getDetailedDescription() {
-        return "You see a pretty dirty <span class=\"hint\">door</span> with some nasty <span class=\"hint\">jokes</span> on it. There are four pieces of <span class=\"hint\">toilet paper</span> and a coin on the ground. Next to you are a few <span class=\"hint\">magazines</span>."
+        return "You see a pretty dirty <span class=\"hint\">door</span> with some nasty <span class=\"hint\">jokes</span> on it. There are four pieces of <span class=\"hint\">toilet paper</span> "
+                + (coinPickedUp ? "" : "and a <span class=\"hint\">coin</span> " ) + "on the ground. Next to you are a few <span class=\"hint\">magazines</span>."
           + "<br/>"
           + "In your pocket you find a card that says you are a \"Pathetic Scrum Developer (PSD)\"";
     }
@@ -41,6 +44,12 @@ public class Loo extends AbstractRoom {
                 }
             case "look at door":
                 return "You see a door. It leads to the washroom.";
+            case "pick up coin":
+                if (coinPickedUp) {
+                    return "You already picked up the coin.";
+                }
+                coinPickedUp = true;
+                return "You picked up the coin.";
             case "go through door":
 
             default:
