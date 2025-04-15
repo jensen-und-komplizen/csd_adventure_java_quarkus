@@ -25,6 +25,6 @@ public class CommandResource {
     @QueryParam("command")
     public String game(@QueryParam("command") String command) {
         var description = adventure.tell(command).replace("\r\n", "<br />").replace("\n", "<br />");
-        return "<h1>you are in the " + adventure.whereAreWe().toString().toLowerCase() + "</h1>" + description;
+        return "<h1>You are in the " + adventure.whereAreWe().toString().toLowerCase() + "</h1>" + description;
     }
 }
