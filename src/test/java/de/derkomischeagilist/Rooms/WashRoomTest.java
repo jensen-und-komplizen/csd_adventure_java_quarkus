@@ -32,7 +32,8 @@ class WashRoomTest {
   void shouldHandleLookAtDoor() {
     adventure.tell("go to washroom");
     String result = adventure.tell("look at door");
-    assertThat(result, containsStringIgnoringCase("door to the hallway"));
+    assertThat(result, containsStringIgnoringCase("door to the <span class=\"hint\">hallway</span>"));
+    assertThat(result, containsStringIgnoringCase("door to the <span class=\"hint\">loo</span>"));
   }
 
   @Test
