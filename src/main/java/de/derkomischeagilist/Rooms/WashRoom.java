@@ -32,11 +32,11 @@ public class WashRoom extends AbstractRoom {
         switch (command.toLowerCase()) {
             case "read dod":
                 return "Things to do before you leave the washroom:</br>" +
-                        "hands washed?" +
+                        "Hands washed?" +
                         "</br>" +
-                        "paper towels in bin?" +
+                        "Paper towels in bin?" +
                         "</br>" +
-                        "toilet flushed?";
+                        "Toilet flushed?";
             case "look at bin":
                 return bin.getDescription();
             default:
