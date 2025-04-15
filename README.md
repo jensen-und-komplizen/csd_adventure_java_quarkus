@@ -34,16 +34,14 @@ java -jar target/quarkus-app/quarkus-run.jar
 
 ## On the remote machine
 ```
-ssh csd@csd.idiot.games
-#Das Passwort steht auf dem miro board
+Wir setzen uns an die Integrationsmaschine
 cd csd_adventure_java_quarkus/
 git pull
 ./mvnw test
 ./mvnw package
 
 #Deployment:
-pgrep -f quarkus.http.port=4711 | xargs kill -9
-java -Dquarkus.http.port=4711 -jar target/quarkus-app/quarkus-run.jar &
+./package_and_run.sh
 #Deployte Versio: https://csd.idiot.games:4711
 ```
 
