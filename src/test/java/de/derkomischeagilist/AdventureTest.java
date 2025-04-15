@@ -142,7 +142,8 @@ public class AdventureTest {
         //When i look around
         String actual = adventure.tell("Do something stupid");
         //Then i can see magazines
-        assertThat(actual, containsStringIgnoringCase("you wake up on the Loo"));
+        assertThat(actual, containsStringIgnoringCase("Sorry, I don't understand"));
+        assertThat(actual, not(containsStringIgnoringCase("you wake up on the Loo")));
     }
 
     @Test

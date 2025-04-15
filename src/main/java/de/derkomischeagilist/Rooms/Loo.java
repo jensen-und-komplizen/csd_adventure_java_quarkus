@@ -53,10 +53,7 @@ public class Loo extends AbstractRoom {
             case "go through door":
 
             default:
-                return
-                   "you wake up on the loo"
-                   + "\n"
-                   + super.handleCommand(command);
+                return super.handleCommand(command);
         }
 
     }
