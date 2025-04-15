@@ -61,4 +61,18 @@ class WashRoomTest {
   void getDetailedDescription() {
     assertTrue(washRoom.getDetailedDescription().toLowerCase().contains("coin"));
   }
+
+  @Test
+  void testPickUpCoin() {
+    WashRoom washRoom = new WashRoom();
+    assertTrue(washRoom.handleCommand("pick up coin").contains("You picked up the coin"));
+  }
+
+  @Test
+  void testPickUpCoinOnlyOnce() {
+    WashRoom washroom = new WashRoom();
+    assertTrue(washroom.handleCommand("pick up coin").contains("You picked up the coin"));
+    assertTrue(washroom.handleCommand("pick up coin").contains("You already picked up the coin"));
+
+  }
 }

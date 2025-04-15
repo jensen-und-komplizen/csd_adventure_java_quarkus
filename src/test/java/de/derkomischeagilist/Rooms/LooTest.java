@@ -36,4 +36,17 @@ class LooTest {
         assertTrue(loo.handleCommand("read scrum guide").contains("better Scrum Developer"));
     }
 
+    @Test
+    void testPickUpCoin() {
+        Loo loo = new Loo();
+        assertTrue(loo.handleCommand("pick up coin").contains("You picked up the coin"));
+    }
+
+    @Test
+    void testPickUpCoinOnlyOnce() {
+        Loo loo = new Loo();
+        assertTrue(loo.handleCommand("pick up coin").contains("You picked up the coin"));
+        assertTrue(loo.handleCommand("pick up coin").contains("You already picked up the coin"));
+
+    }
 }
