@@ -1,13 +1,17 @@
 package de.derkomischeagilist.Rooms;
 
 import de.derkomischeagilist.Items.Bin;
+import de.derkomischeagilist.Items.Door;
 
 public class WashRoom extends AbstractRoom {
 
     private final Bin bin;
 
+    private final Door door;
+
     public WashRoom() {
         this.bin = new Bin();
+        this.door = new Door();
     }
 
     public String getDescription() {
@@ -39,6 +43,8 @@ public class WashRoom extends AbstractRoom {
                         "Toilet flushed?";
             case "look at bin":
                 return bin.getDescription();
+            case "look at door":
+                return door.getDescription();
             default:
                 return super.handleCommand(command);
         }
