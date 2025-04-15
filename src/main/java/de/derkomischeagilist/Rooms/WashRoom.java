@@ -19,7 +19,7 @@ public class WashRoom extends AbstractRoom {
                 + "<br/>"
                 + "There is a <span class=\"hint\">bin</span> next to the sink."
                 + "<br/>"
-                + "You notice a  <span class=\"hint\">DoD</span> on the door."
+                + "You notice a  <span class=\"hint\">DoD (Definition of Done)</span> on the door."
                 + "</br>"
                 + "There is a door to the <span class=\"hint\">loo</span>."
                 + "</br>"
@@ -31,7 +31,8 @@ public class WashRoom extends AbstractRoom {
     public String handleCommand(String command) {
         switch (command.toLowerCase()) {
             case "read dod":
-                return "hands washed?" +
+                return "Things to do before you leave the washroom:</br>" +
+                        "hands washed?" +
                         "</br>" +
                         "paper towels in bin?" +
                         "</br>" +
