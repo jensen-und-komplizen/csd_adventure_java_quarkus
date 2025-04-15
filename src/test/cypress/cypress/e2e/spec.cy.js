@@ -13,11 +13,11 @@ describe('e2e test with mocked server response', () => {
 describe('breadcrumbs', () => {
   it('says "you are in the loo" in the first room', () => {
     cy.visit('/game')
-    cy.get('h1').contains('you are in the loo')
+    cy.get('h1').contains('You are in the loo')
   })
   it('says "you are in the washroom" in the second room', () => {
       cy.visit('/game')
-      cy.get('#command').type('use door to washroom{enter}')
-      cy.get('h1').contains('you are in the washroom')
+      cy.get('#command').type('go to washroom{enter}')
+      cy.get('h1').contains('You are in the washroom')
     })
 })

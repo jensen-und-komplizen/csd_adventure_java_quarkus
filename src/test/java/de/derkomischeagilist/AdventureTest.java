@@ -104,7 +104,7 @@ public class AdventureTest {
         String actual = adventure.tell("Do something stupid");
         //Then i can see magazines
         assertThat(actual, not(containsStringIgnoringCase("invalid command")));
-        assertThat(actual, containsStringIgnoringCase("Try to 'look around', 'look at magazines' (better get your gloves), 'look at door', 'look at toilet paper', 'read a joke' or just 'use door to washroom' to escape the smell."));
+        assertThat(actual, containsStringIgnoringCase("Try to 'look around', 'look at magazines' (better get your gloves), 'look at door', 'look at toilet paper', 'read a joke' or just 'go to washroom' to escape the smell."));
     }
 
     @Test
@@ -116,7 +116,7 @@ public class AdventureTest {
         String actual = adventure.tell(command);
         //Then i can see funny response
         assertThat(actual, containsStringIgnoringCase(String.format("Sorry, I don't understand '%s'", command)));
-        assertThat(actual, containsStringIgnoringCase("Try to 'look around', 'look at magazines' (better get your gloves), 'look at door', 'look at toilet paper', 'read a joke' or just 'use door to washroom' to escape the smell."));
+        assertThat(actual, containsStringIgnoringCase("Try to 'look around', 'look at magazines' (better get your gloves), 'look at door', 'look at toilet paper', 'read a joke' or just 'go to washroom' to escape the smell."));
     }
 
 
@@ -150,7 +150,7 @@ public class AdventureTest {
         //given i am on the loo
         assertThat(adventure.Begin(), containsStringIgnoringCase("you wake up on the Loo"));
         //When I go into the washroom
-        String actual = adventure.tell("use door to washroom");
+        String actual = adventure.tell("go to washroom");
         //Then i can see the washroom
         assertThat(actual, containsStringIgnoringCase("washroom"));
     }
@@ -160,7 +160,7 @@ public class AdventureTest {
         //given i am on the loo
         assertThat(adventure.Begin(), containsStringIgnoringCase("you wake up on the Loo"));
         //When I go into the washroom
-        adventure.tell("use door to washroom");
+        adventure.tell("go to washroom");
         //When I look around
         String actual = adventure.tell("look around");
         //Then i can see a sink and a door
@@ -172,7 +172,7 @@ public class AdventureTest {
         //given i am on the loo
         assertThat(adventure.Begin(), containsStringIgnoringCase("you wake up on the Loo"));
         //When I go into the Team Office
-        String actual = adventure.tell("use door to team office");
+        String actual = adventure.tell("go to team office");
         //Then i am greeted by my teammates
         assertThat(actual, containsStringIgnoringCase("Hey, you moron! ;)"));
     }
@@ -186,7 +186,7 @@ public class AdventureTest {
     @Test
     void EnteringTeamOfficeShowsDetail() {
         //When I go into the TeamOffice
-        String actual = adventure.tell("use door to team office");
+        String actual = adventure.tell("go to team office");
         //Then i can see a sink and a door
         assertThat(actual, containsStringIgnoringCase("many flip charts"));
     }
@@ -194,7 +194,7 @@ public class AdventureTest {
     @Test
     void EnteringKitchenShowsDetail() {
         //When I go into the Kitchen
-        String actual = adventure.tell("use door to kitchen");
+        String actual = adventure.tell("go to kitchen");
         //Then i can see a sink and a door
         assertThat(actual, containsStringIgnoringCase("It might be the kitchen"));
 
@@ -203,7 +203,7 @@ public class AdventureTest {
     @Test
     void EnteringHallwayShowsDetail() {
         //When I go into the Hallway
-        String actual = adventure.tell("use door to hallway");
+        String actual = adventure.tell("go to hallway");
         //Then i can see a sink and a door
         assertThat(actual, containsStringIgnoringCase("very dark hallway to hell"));
 
@@ -214,7 +214,7 @@ public class AdventureTest {
         //given i am on the loo
         assertThat(adventure.Begin(), containsStringIgnoringCase("you wake up on the Loo"));
         //When I go into the Team Office
-        String actual = adventure.tell("use door to team office");
+        String actual = adventure.tell("go to team office");
         //Then my teammates are smart
         assertThat(actual, containsStringIgnoringCase("smart"));
         //Then my teammates are smelly
@@ -226,7 +226,7 @@ public class AdventureTest {
         //given i am on the loo
         assertThat(adventure.Begin(), containsStringIgnoringCase("you wake up on the Loo"));
         //When I go into the Team Office
-        String actual = adventure.tell("uSe DoOr tO tEaM oFfIcE");
+        String actual = adventure.tell("Go tO tEaM oFfIcE");
         //Then the command leads me to the team room
         assertThat(actual, not(containsStringIgnoringCase("invalid command")));
     }
@@ -339,7 +339,7 @@ public class AdventureTest {
     void moveToHallwayAndCommitSuicide(){
         //given I am on the loo
         assertThat(adventure.Begin(), containsStringIgnoringCase("you wake up on the Loo"));
-        String actual = adventure.tell("use door to washroom");
+        String actual = adventure.tell("go to washroom");
         assertThat(actual, containsStringIgnoringCase("You enter a room that looks like a washroom."));
         actual = adventure.tell("commit suicide");
         assertThat(actual, containsStringIgnoringCase("you wake up on the Loo"));
@@ -349,9 +349,9 @@ public class AdventureTest {
     void moveFromLooToWashroomAndBackToLoo(){
         //given I am on the loo
         assertThat(adventure.Begin(), containsStringIgnoringCase("you wake up on the Loo"));
-        String actual = adventure.tell("use door to washroom");
+        String actual = adventure.tell("go to washroom");
         assertThat(actual, containsStringIgnoringCase("You enter a room that looks like a washroom."));
-        actual = adventure.tell("use door to loo");
+        actual = adventure.tell("go to loo");
         assertThat(actual, containsStringIgnoringCase("You are on the loo again. Still smelly."));
     }
 
@@ -359,11 +359,11 @@ public class AdventureTest {
     void moveFromLooToWashroomAndTooHallwayAndBackToLoo(){
         //given I am on the loo
         assertThat(adventure.Begin(), containsStringIgnoringCase("you wake up on the Loo"));
-        String actual = adventure.tell("use door to washroom");
+        String actual = adventure.tell("go to washroom");
         assertThat(actual, containsStringIgnoringCase("You enter a room that looks like a washroom."));
-        actual = adventure.tell("use door to hallway");
+        actual = adventure.tell("go to hallway");
         assertThat(actual, containsStringIgnoringCase("Welcome to the hallway to hell."));
-        actual = adventure.tell("use door to loo");
+        actual = adventure.tell("go to loo");
         assertThat(actual, containsStringIgnoringCase("You are on the loo again. Still smelly."));
     }
 
@@ -372,11 +372,11 @@ public class AdventureTest {
         //given I am on the loo
         assertThat(adventure.Begin(), containsStringIgnoringCase("you wake up on the Loo"));
         // Commands shall work, regardless if written in lower or uppercase
-        String actual = adventure.tell("USe dooR to washrOOm");
+        String actual = adventure.tell("GO tO washrOOm");
         assertThat(actual, containsStringIgnoringCase("You enter a room that looks like a washroom."));
-        actual = adventure.tell("USE DOOR TO HALLWAY");
+        actual = adventure.tell("GO TO HALLWAY");
         assertThat(actual, containsStringIgnoringCase("Welcome to the hallway to hell."));
-        actual = adventure.tell("USE DOOR TO LOO");
+        actual = adventure.tell("GO TO LOO");
         assertThat(actual, containsStringIgnoringCase("You are on the loo again. Still smelly."));
     }
 
@@ -384,9 +384,9 @@ public class AdventureTest {
     void moveToHallwayAndOpenSpookyDoor(){
         //given I am on the loo
         assertThat(adventure.Begin(), containsStringIgnoringCase("you wake up on the Loo"));
-        String actual = adventure.tell("use door to washroom");
+        String actual = adventure.tell("go to washroom");
         assertThat(actual, containsStringIgnoringCase("You enter a room that looks like a washroom."));
-        actual = adventure.tell("use door to hallway");
+        actual = adventure.tell("go to hallway");
         assertThat(actual, containsStringIgnoringCase("Welcome to the hallway to hell."));
         actual = adventure.tell("inspect the spooky door");
         assertThat(actual, containsStringIgnoringCase("number of Scrum values"));
@@ -400,7 +400,7 @@ public class AdventureTest {
     void useKeypadInHallwayWithInvalidKey(){
         //given I enter the hallway
         assertThat(adventure.Begin(), containsStringIgnoringCase("you wake up on the Loo"));
-        adventure.tell("use door to hallway");
+        adventure.tell("go to hallway");
         // when I use the keypad
         String actual = adventure.tell("use keypad");
         // i see the description of the keypad
@@ -422,7 +422,7 @@ public class AdventureTest {
     void afterUsingDoorToWashroomWeAreInTheWashroom() {
         // when
         adventure.Begin();
-        adventure.tell("use door to washroom");
+        adventure.tell("go to washroom");
 
         // then
         assertThat(adventure.whereAreWe(), equalTo(Location.WASHROOM));
