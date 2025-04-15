@@ -35,7 +35,7 @@ public class StepDefinitions {
     public void i_am_in_the_washroom() {
         i_am_playing_the_game();
 
-        lastResponse = adventure.tell("use door to washroom");
+        lastResponse = adventure.tell("go to washroom");
 
         assertThat(lastResponse, containsStringIgnoringCase("looks like a washroom"));
     }
@@ -56,7 +56,7 @@ public class StepDefinitions {
 
     @When("I use the door to the hallway")
     public void i_use_the_door_to_the_hallway() {
-        lastResponse = adventure.tell("use door to hallway");
+        lastResponse = adventure.tell("go to hallway");
     }
 
     @Then("I am now in the hallway")
@@ -68,21 +68,21 @@ public class StepDefinitions {
     public void i_am_in_the_hallway() {
         i_am_playing_the_game();
 
-        lastResponse = adventure.tell("use door to hallway");
+        lastResponse = adventure.tell("go to hallway");
 
         i_am_now_in_the_hallway();
     }
 
     @When("I use the door to the team office")
     public void i_use_the_door_to_the_team_office() {
-        lastResponse = adventure.tell("use door to team office");
+        lastResponse = adventure.tell("go to team office");
     }
 
     @Given("I am in the team office")
     public void i_am_in_the_team_office() {
         i_am_playing_the_game();
 
-        lastResponse = adventure.tell("use door to team office");
+        lastResponse = adventure.tell("go to team office");
 
         i_am_now_in_the_team_office();
     }
@@ -96,7 +96,7 @@ public class StepDefinitions {
     public void we_are_in_the_kitchen() {
         i_am_playing_the_game();
 
-        lastResponse = adventure.tell("use door to kitchen");
+        lastResponse = adventure.tell("go to kitchen");
 
         we_am_now_in_the_kitchen();
     }

@@ -1,13 +1,17 @@
 package de.derkomischeagilist.Rooms;
 
 import de.derkomischeagilist.Items.Bin;
+import de.derkomischeagilist.Items.Door;
 
 public class WashRoom extends AbstractRoom {
 
     private final Bin bin;
 
+    private final Door door;
+
     public WashRoom() {
         this.bin = new Bin();
+        this.door = new Door();
     }
 
     public String getDescription() {
@@ -19,11 +23,11 @@ public class WashRoom extends AbstractRoom {
                 + "<br/>"
                 + "There is a <span class=\"hint\">bin</span> next to the sink."
                 + "<br/>"
-                + "You notice a  <span class=\"hint\">DoD</span> on the door."
+                + "You notice a  <span class=\"hint\">DoD (Definition of Done)</span> on the door."
                 + "</br>"
                 + "There is a door to the <span class=\"hint\">loo</span>."
                 + "</br>"
-                + "On the other side of the room you see another door."
+                + "On the other side of the room you see another <span class=\"hint\">door</span>."
                 + "</br>"
                 + "On the floor you see a coin.";
     }
@@ -31,13 +35,16 @@ public class WashRoom extends AbstractRoom {
     public String handleCommand(String command) {
         switch (command.toLowerCase()) {
             case "read dod":
-                return "hands washed?" +
+                return "Things to do before you leave the washroom:</br>" +
+                        "Hands washed?" +
                         "</br>" +
-                        "paper towels in bin?" +
+                        "Paper towels in bin?" +
                         "</br>" +
-                        "toilet flushed?";
+                        "Toilet flushed?";
             case "look at bin":
                 return bin.getDescription();
+            case "look at door":
+                return door.getDescription();
             default:
                 return super.handleCommand(command);
         }
@@ -45,7 +52,7 @@ public class WashRoom extends AbstractRoom {
 
     @Override
     public String getHelp() {
-        return "Try to type 'look around', 'read DoD', or 'use door to hallway', or 'use door to loo'."
+        return "Try to type 'look around', 'read DoD', or 'go to hallway', or 'go to loo'."
                 + super.getHelp();
     }
 }
