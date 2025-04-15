@@ -71,7 +71,7 @@ public class AdventureTest {
         //When i look around
         String actual = adventure.tell("look around");
         //Then i can see magazines
-        assertThat(actual, containsString("Pathetic Scrum Developer"));
+        assertThat(actual, containsString("\"Pathetic Scrum Developer (PSD)\""));
         assertThat(actual, containsStringIgnoringCase("card"));
     }
 
