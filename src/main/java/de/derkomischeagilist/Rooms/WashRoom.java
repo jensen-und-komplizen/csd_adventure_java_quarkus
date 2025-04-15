@@ -23,7 +23,7 @@ public class WashRoom extends AbstractRoom {
                 + "</br>"
                 + "There is a door to the <span class=\"hint\">loo</span>."
                 + "</br>"
-                + "On the other side of the room you see another door."
+                + "On the other side of the room you see another <span class=\"hint\">door</span>."
                 + "</br>"
                 + "On the floor you see a coin.";
     }

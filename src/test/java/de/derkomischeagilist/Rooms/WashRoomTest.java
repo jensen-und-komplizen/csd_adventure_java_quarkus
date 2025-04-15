@@ -18,6 +18,7 @@ class WashRoomTest {
     String actual = adventure.tell("go to washroom");
     //Then i can see a sink and a door
     assertThat(actual, containsStringIgnoringCase("incredibly nasty sink"));
+    assertThat(actual, containsStringIgnoringCase("you see another <span class=\"hint\">door</span>"));
   }
 
   @Test
