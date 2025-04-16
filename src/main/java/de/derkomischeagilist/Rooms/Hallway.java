@@ -22,7 +22,7 @@ public class Hallway extends AbstractRoom {
             case "inspect the spooky door":
                 return "You see a rugged and sturdy steel door with cryptic symbols on it. Above the door is a sign saying \"EXIT\". "
                 		+ "The door is covered in cobweb and next to it is a rusty coin slot. The coin slot has a post-it attached to it saying \"Please insert your coins\". "+
-                        "You could try to look around to get more coins.";
+                        "You could try to unlock the door with 'insert coins'.";
             case "inspect the poster":
                 return "---------------------------------\n" +
                         "| The mighty Scrum Values are \n" +
@@ -50,7 +50,7 @@ public class Hallway extends AbstractRoom {
         } else {
             return "Nothing happens. After 5 seconds, the coin slot returns the coins. " +
                     "You hear a voice saying: \"Please insert more coins\". " +
-                    "You could try to unlock the door with 'insert coins'.";
+                    "You could try to look around to get more coins";
         }
     }
 

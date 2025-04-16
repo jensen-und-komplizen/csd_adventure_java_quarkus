@@ -46,7 +46,7 @@ public class HallwayTest {
     void InspectingTheSpookyDoorRevealsTheKeypad() {
         String commandResult = hallway.handleCommand("inspect the spooky door");
         assertThat(commandResult, containsStringIgnoringCase("You see a rugged and sturdy steel door with cryptic symbols on it. Above the door is a sign saying \"EXIT\". "
-        		+ "The door is covered in cobweb and next to it is a rusty coin slot. The coin slot has a post-it attached to it saying \"Please insert your coins\". You could try to look around to get more coins."));
+        		+ "The door is covered in cobweb and next to it is a rusty coin slot. The coin slot has a post-it attached to it saying \"Please insert your coins\". You could try to unlock the door with 'insert coins'."));
     }
 
     @Test
