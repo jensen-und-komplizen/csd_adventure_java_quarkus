@@ -1,14 +1,8 @@
 package de.derkomischeagilist.Rooms;
 
 public class Hallway extends AbstractRoom {
-    private boolean keypadIsActive = false;
-
-    public void resetKeypad() {
-        keypadIsActive = false;
-    }
-
-    public void activateKeypad() {
-        keypadIsActive = true;
+    private boolean hasEnoughCoins() {
+        return false;
     }
 
     @Override
@@ -26,8 +20,8 @@ public class Hallway extends AbstractRoom {
         switch (command.toLowerCase()) {
             case "inspect the spooky door":
                 return "You see a rugged and sturdy steel door with cryptic symbols on it. Above the door is a sign saying \"EXIT\". "
-                		+ "The door is covered in cobweb and next to it is a rusty keypad. The keypad has a post-it attached to it saying \"Please enter number of Scrum values.\". "
-                		+ "You could try to unlock the door with 'use keypad'.";
+                		+ "The door is covered in cobweb and next to it is a rusty coin slot. The coin slot has a post-it attached to it saying \"Please insert your coins\". "+
+                        "You could try to look around to get more coins.";
             case "inspect the poster":
                 return "---------------------------------\n" +
                         "| The mighty Scrum Values are \n" +
@@ -37,31 +31,26 @@ public class Hallway extends AbstractRoom {
                         "| openness\n" +
                         "| respect\n" +
                         "--------------------------------";
-            case "use keypad":
-            case "use rusty keypad":
-                activateKeypad();
-                return "You need to enter the number of the Scrum values. If you have no clue, take a look around.";
+            case "insert coins":
+                return handleDefaultCase();
             default: {
-                return handleDefaultCase(command);
+                return super.handleCommand(command);
             }
         }
     }
 
-    private String handleDefaultCase(String command) {
-        if (keypadIsActive) {
-            resetKeypad();
-            if (command.equalsIgnoreCase("5")) {
+    private String handleDefaultCase() {
+        if (hasEnoughCoins()) {
                 return "You made it! In front of you are a lot of people, who start clapping as they see you. " +
                         "You realize, that you are standing on a podium. " +
                         "Some guy hurries over and hands over a certificate, which says that you are now a " +
                         "'Certified Scrum Developer'. " +
                         "Congratulations!!!";
-            }
-
-            return "You hear a \"beep\", but nothing happens. " +
-                    "If you want to retry, please enter the command 'use keypad' again.";
+        } else {
+            return "Nothing happens. After 5 seconds, the coin slot returns the coins. " +
+                    "You hear a voice saying: \"Please insert more coins\". " +
+                    "You could try to unlock the door with 'insert coins'.";
         }
-        return super.handleCommand(command);
     }
 
     @Override

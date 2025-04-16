@@ -46,8 +46,7 @@ public class HallwayTest {
     void InspectingTheSpookyDoorRevealsTheKeypad() {
         String commandResult = hallway.handleCommand("inspect the spooky door");
         assertThat(commandResult, containsStringIgnoringCase("You see a rugged and sturdy steel door with cryptic symbols on it. Above the door is a sign saying \"EXIT\". "
-        		+ "The door is covered in cobweb and next to it is a rusty keypad. The keypad has a post-it attached to it saying \"Please enter number of Scrum values.\". "
-        		+ "You could try to unlock the door with 'use keypad'."));
+        		+ "The door is covered in cobweb and next to it is a rusty coin slot. The coin slot has a post-it attached to it saying \"Please insert your coins\". You could try to look around to get more coins."));
     }
 
     @Test
@@ -58,27 +57,5 @@ public class HallwayTest {
         assertThat(commandResult, containsStringIgnoringCase("focus"));
         assertThat(commandResult, containsStringIgnoringCase("openness"));
         assertThat(commandResult, containsStringIgnoringCase("respect"));
-    }
-
-    @Test
-    void InputIsInterpretedAsKeypadCodeWhenFlagSet() {
-        hallway.activateKeypad();
-        String commandResult = hallway.handleCommand("5");
-        assertThat(commandResult, containsStringIgnoringCase("You made it"));
-    }
-
-    @Test
-    void UsingTheKeypadOnceReturnsToNormalCommandInterpretation() {
-        hallway.activateKeypad();
-        hallway.handleCommand("888");
-        String commandResult = hallway.handleCommand("inspect the spooky door");
-        assertThat(commandResult, containsStringIgnoringCase("You see a rugged and sturdy steel door with cryptic symbols on it."));
-    }
-
-    @Test
-    void WrongKeypadCodeReturnsErrorMessage() {
-        hallway.activateKeypad();
-        String commandResult = hallway.handleCommand("345");
-        assertThat(commandResult, containsStringIgnoringCase("nothing happens"));
     }
 }

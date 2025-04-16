@@ -59,7 +59,6 @@ public class Adventure {
                 response = currentRoom.getDescription() + "\n\n" + currentRoom.getDetailedDescription();
                 break;
             case "go to hallway":
-                hallway.resetKeypad();
                 currentRoom = hallway;
                 response = currentRoom.getDescription() + "\n\n" + currentRoom.getDetailedDescription();
                 break;
