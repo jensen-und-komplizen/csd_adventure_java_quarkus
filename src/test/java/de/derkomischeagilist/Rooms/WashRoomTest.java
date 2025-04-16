@@ -1,11 +1,11 @@
 package de.derkomischeagilist.Rooms;
 
+import de.derkomischeagilist.Adventure;
+import org.junit.jupiter.api.Test;
+
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsStringIgnoringCase;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
-import de.derkomischeagilist.Adventure;
-import org.junit.jupiter.api.Test;
 
 class WashRoomTest {
 
@@ -56,6 +56,12 @@ class WashRoomTest {
         String result = adventure.tell("look at bin");
         assert (result.contains(
                 "You walk closer to the bin. It is very dirty and smells like an old wet chicken. Inside you see a lot of used paper towels. No one would reach in here."));
+    }
+
+    @Test
+    void shouldHandleUnknownCommand() {
+        String result = adventure.tell("ghjfeagnjkwafnwjs");
+        assert (result.contains("style='color: #d50000; font-weight: bold; font-size: 1.2em;'"));
     }
 
   @Test
