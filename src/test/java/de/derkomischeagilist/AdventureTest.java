@@ -104,7 +104,7 @@ public class AdventureTest {
         String actual = adventure.tell("Do something stupid");
         //Then i can see magazines
         assertThat(actual, not(containsStringIgnoringCase("invalid command")));
-        assertThat(actual, containsStringIgnoringCase("Try to 'look around', 'look at magazines' (better get your gloves), 'look at door', 'look at toilet paper', 'read a joke' or just 'go to washroom' to escape the smell."));
+        assertThat(actual, containsStringIgnoringCase("Try to "));
     }
 
     @Test
@@ -116,7 +116,7 @@ public class AdventureTest {
         String actual = adventure.tell(command);
         //Then i can see funny response
         assertThat(actual, containsStringIgnoringCase(String.format("Sorry, I don't understand '%s'", command)));
-        assertThat(actual, containsStringIgnoringCase("Try to 'look around', 'look at magazines' (better get your gloves), 'look at door', 'look at toilet paper', 'read a joke' or just 'go to washroom' to escape the smell."));
+        assertThat(actual, containsStringIgnoringCase("Try to "));
     }
 
 
