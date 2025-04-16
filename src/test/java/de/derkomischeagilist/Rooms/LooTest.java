@@ -49,4 +49,24 @@ class LooTest {
         assertTrue(loo.handleCommand("pick up coin").contains("You already picked up the coin"));
 
     }
+
+    @Test
+    void testScrumMasterFirstTime() {
+        Loo loo = new Loo();
+        assertTrue(loo.handleCommand("talk to scrum master").contains("I am the Scrum Master and I have a riddle for you"));
+    }
+
+    @Test
+    void testScrumMasterAlreadyAnsweredCorrectly() {
+        Loo loo = new Loo();
+        assertTrue(loo.handleCommand("talk to scrum master").contains("I am the Scrum Master and I have a riddle for you"));
+        loo.handleCommand("definition of done");
+        assertTrue(loo.handleCommand("talk to scrum master").contains("You cannot learn anymore from me!"));
+    }
+    @Test
+    void testScrumMasterAlreadyAnsweredWrong() {
+        Loo loo = new Loo();
+        assertTrue(loo.handleCommand("talk to scrum master").contains("I am the Scrum Master and I have a riddle for you"));
+        assertTrue(loo.handleCommand("ignore").contains("You ignore the Scrum Master. He looks disappointed."));
+    }
 }
