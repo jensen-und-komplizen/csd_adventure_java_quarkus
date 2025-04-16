@@ -2,6 +2,7 @@ package de.derkomischeagilist.Rooms;
 
 public class Hallway extends AbstractRoom {
     private boolean hasEnoughCoins() {
+        // TODO implement method to get the current amount of coins and check if it is enough
         return false;
     }
 
