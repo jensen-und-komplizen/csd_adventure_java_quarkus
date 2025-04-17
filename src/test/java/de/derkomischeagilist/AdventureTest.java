@@ -1,5 +1,6 @@
 package de.derkomischeagilist;
 
+import de.derkomischeagilist.Rooms.Loo;
 import org.hamcrest.CoreMatchers;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -397,11 +398,12 @@ public class AdventureTest {
     }
 
     @Test
-    void useKeypadInHallwayWithNotEnoughCoins(){
+    void useCoinSlotInHallwayWithNotEnoughCoins(){
         //given I enter the hallway
         assertThat(adventure.Begin(), containsStringIgnoringCase("you wake up on the Loo"));
         adventure.tell("go to hallway");
         // when I use the coin slot
+        Inventory.addCoin();
         String actual = adventure.tell("insert coins");
         // i see the description of the coin slot
         assertThat(actual, containsString("Nothing happens"));

@@ -1,5 +1,6 @@
 package de.derkomischeagilist.Rooms;
 
+import de.derkomischeagilist.Inventory;
 import de.derkomischeagilist.Items.Bin;
 import de.derkomischeagilist.Items.Door;
 
@@ -49,6 +50,7 @@ public class WashRoom extends AbstractRoom {
                 if (coinPickedUp) {
                     return "You already picked up the coin.";
                 }
+                Inventory.addCoin();
                 coinPickedUp = true;
                 return "You picked up the coin.";
             case "look at door":

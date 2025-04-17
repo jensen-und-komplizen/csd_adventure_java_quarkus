@@ -1,5 +1,7 @@
 package de.derkomischeagilist.Rooms;
 
+import de.derkomischeagilist.Inventory;
+
 public class Loo extends AbstractRoom {
 
     private int toiletPaperCount;
@@ -37,6 +39,7 @@ public class Loo extends AbstractRoom {
                 case "a":
                 case "definition of done":
                     coinScrumMaster = true;
+                    Inventory.addCoin();
                     talkingToScrumMaster = false;
                     return "You answered the riddle correctly. The Scrum Master is happy and gives you a <span class=\"hint\">coin</span>.";
                 case "d":
@@ -70,6 +73,7 @@ public class Loo extends AbstractRoom {
                     return "You already picked up the coin.";
                 }
                 coinPickedUp = true;
+                Inventory.addCoin();
                 return "You picked up the coin.";
             case "talk to scrum master":
                 if (coinScrumMaster) {

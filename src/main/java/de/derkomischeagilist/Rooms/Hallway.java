@@ -1,9 +1,18 @@
 package de.derkomischeagilist.Rooms;
 
+import de.derkomischeagilist.Inventory;
+
 public class Hallway extends AbstractRoom {
     private boolean hasEnoughCoins() {
-        // TODO implement method to get the current amount of coins and check if it is enough
-        return false;
+        return getCurrentCoinAmount() >= getNeededCoinAmount();
+    }
+
+    private int getNeededCoinAmount() {
+        return 3;
+    }
+
+    private int getCurrentCoinAmount() {
+        return Inventory.getCoins();
     }
 
     @Override
@@ -21,7 +30,7 @@ public class Hallway extends AbstractRoom {
         switch (command.toLowerCase()) {
             case "inspect the spooky door":
                 return "You see a rugged and sturdy steel door with cryptic symbols on it. Above the door is a sign saying \"EXIT\". "
-                		+ "The door is covered in cobweb and next to it is a rusty coin slot. The coin slot has a post-it attached to it saying \"Please insert your coins\". "+
+                		+ "The door is covered in cobweb and next to it is a rusty coin slot. The coin slot has a post-it attached to it saying \"Please insert "+ getNeededCoinAmount() +" coins\". "+
                         "You could try to unlock the door with 'insert coins'.";
             case "inspect the poster":
                 return "---------------------------------\n" +
@@ -33,6 +42,9 @@ public class Hallway extends AbstractRoom {
                         "| respect\n" +
                         "--------------------------------";
             case "insert coins":
+                if (getCurrentCoinAmount() == 0) {
+                    return "You have no coins. You need to insert " + getNeededCoinAmount() + " coins.";
+                }
                 return handleDefaultCase();
             default: {
                 return super.handleCommand(command);
@@ -50,6 +62,7 @@ public class Hallway extends AbstractRoom {
         } else {
             return "Nothing happens. After 5 seconds, the coin slot returns the coins. " +
                     "You hear a voice saying: \"Please insert more coins\". " +
+                    "You currently have " + getCurrentCoinAmount() + " coins.</br>" +
                     "You could try to look around to get more coins";
         }
     }
