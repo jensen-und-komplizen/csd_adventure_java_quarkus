@@ -12,4 +12,8 @@ public class Inventory {
 	public static void addCoin() {
 		Inventory.coins += 1;
 	}
+
+	public static void clear() {
+		Inventory.coins = 0;
+	}
 }

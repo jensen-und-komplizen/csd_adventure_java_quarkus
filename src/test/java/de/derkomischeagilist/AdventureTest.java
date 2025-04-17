@@ -390,11 +390,13 @@ public class AdventureTest {
         assertThat(actual, containsStringIgnoringCase("You enter a room that looks like a washroom."));
         actual = adventure.tell("go to hallway");
         assertThat(actual, containsStringIgnoringCase("Welcome to the hallway to hell."));
-        actual = adventure.tell("inspect the spooky door");
+        actual =  adventure.tell("inspect the spooky door");
+        Inventory.addCoin();
+        Inventory.addCoin();
+        Inventory.addCoin();
         assertThat(actual, containsStringIgnoringCase("coin slot"));
-        // TODO we need to fix the test so it asserts that we made it
         actual = adventure.tell("insert coins");
-        // assertThat(actual, containsStringIgnoringCase("You made it"));
+        assertThat(actual, containsStringIgnoringCase("You made it"));
     }
 
     @Test
@@ -403,6 +405,7 @@ public class AdventureTest {
         assertThat(adventure.Begin(), containsStringIgnoringCase("you wake up on the Loo"));
         adventure.tell("go to hallway");
         // when I use the coin slot
+        Inventory.clear();
         Inventory.addCoin();
         String actual = adventure.tell("insert coins");
         // i see the description of the coin slot
