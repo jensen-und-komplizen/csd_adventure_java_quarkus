@@ -1,6 +1,11 @@
 package de.derkomischeagilist;
 
-import de.derkomischeagilist.Rooms.*;
+import de.derkomischeagilist.Rooms.Hallway;
+import de.derkomischeagilist.Rooms.Kitchen;
+import de.derkomischeagilist.Rooms.Loo;
+import de.derkomischeagilist.Rooms.Room;
+import de.derkomischeagilist.Rooms.TeamOffice;
+import de.derkomischeagilist.Rooms.WashRoom;
 
 public class Adventure {
 
@@ -14,11 +19,16 @@ public class Adventure {
     private String lastResponse;
 
     private String[] jokes = new String[] {
-        "Why do we tell actors to 'break a leg?' - Because every play has a cast ;)",
-        "Chuck Norris wins at Planning Poker.",
-        "Why don't scientists trust atoms? Because they make up everything!"
+            "Why do we tell actors to 'break a leg?' - Because every play has a cast ;)",
+            "Chuck Norris wins at Planning Poker.",
+            "Why don't scientists trust atoms? Because they make up everything!",
+            "Why was the JavaScript developer sad? - Because he didn’t know how to 'null' his feelings."
     };
-    
+
+    public String[] getJokes() {
+        return this.jokes;
+    }
+
     int jokeCounter = 0;
 
     public Adventure() {
@@ -94,12 +104,14 @@ public class Adventure {
         lastResponse += currentRoom.getDetailedDescription();
         return lastResponse;
     }
+
     public String Begin(String joke) {
-        jokes = new String[]{joke};
+        jokes = new String[] { joke };
         return Begin();
     }
+
     public Location whereAreWe() {
-        if(currentRoom.getDescription().equals("You enter a room that looks like a washroom.")){
+        if (currentRoom.getDescription().equals("You enter a room that looks like a washroom.")) {
             return Location.WASHROOM;
         }
         return Location.LOO;
