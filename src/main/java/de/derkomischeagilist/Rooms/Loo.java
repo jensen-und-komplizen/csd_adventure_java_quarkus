@@ -67,7 +67,7 @@ public class Loo extends AbstractRoom {
                         return "On the last piece is written: \"Developers: We have too many meetings.\" I remember. I need to find my Scrum team to help them get out of here.";
                 }
             case "look at door":
-                return "You see a door. It leads to the washroom.";
+                return "You see a door with a birch handle which looks like it hasn't been cleaned for a while. It leads to the washroom.";
             case "pick up coin":
                 if (coinPickedUp) {
                     return "You already picked up the coin.";

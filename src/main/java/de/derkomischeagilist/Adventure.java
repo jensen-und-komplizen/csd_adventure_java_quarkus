@@ -91,7 +91,6 @@ public class Adventure {
 
     public String Begin() {
         lastResponse = currentRoom.getDescription();
-        lastResponse += "\nIf you want to play the game, enter commands into the textbox. If you're feeling lost use the command 'help'.\n\n";
         lastResponse += currentRoom.getDetailedDescription();
         return lastResponse;
     }

@@ -29,13 +29,6 @@ public class AdventureTest {
         assertThat(adventure.Begin(), containsString("You wake up on the loo"));
     }
 
-    @Test
-    void AdventureProvidesHelpTextAtStartup() {
-        String beginText = adventure.Begin();
-        assertThat(beginText, containsStringIgnoringCase("enter command"));
-        assertThat(beginText, containsStringIgnoringCase("help"));
-    }
-
 
     @Test
     void LookingAroundInTheLooThenICanSeeMagazines() {
@@ -53,6 +46,12 @@ public class AdventureTest {
         String actual = adventure.tell("look at door");
         //Then there is shown, that it is a washroom
         assertThat(actual, CoreMatchers.containsString("washroom"));
+    }
+
+    @Test
+    void TheWashroomDoorHasANiceDescription() {
+        String actual = adventure.tell("look at door");
+        assertThat(actual, containsString("it hasn't been cleaned for a while"));
     }
 
     @Test
