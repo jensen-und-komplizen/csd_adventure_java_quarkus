@@ -50,11 +50,18 @@ public class Adventure {
                 currentRoom = loo;
                 response = currentRoom.getDescription() + "\n\n" + currentRoom.getDetailedDescription();
                 break;
+            case "look at a joke":
             case "read a joke":
                 if (currentRoom == loo) {
                     response = jokes[jokeCounter++ % jokes.length];
                 } else {
                     response = "There is no joke in this room.";
+                }
+                break;
+            case "read jokes":
+            case "look at jokes":
+                for(String joke : jokes) {
+                    response = response + joke + "\n";
                 }
                 break;
             case "look around":
