@@ -11,7 +11,8 @@ public class GameResource {
 
   private final Adventure adventure;
 
-  @Inject AdventureService adventureService;
+  @Inject
+  AdventureService adventureService;
 
   public GameResource(AdventureService adventureService) {
     this.adventureService = adventureService;
@@ -28,7 +29,7 @@ public class GameResource {
         + "<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin> \n"
         + "<link href=\"https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=VT323&display=swap\" rel=\"stylesheet\">"
         + "<link rel=\"stylesheet\" type=\"text/css\" href=\"/game.css\" />"
-        + "</head><body><div class=\"container\"><div id=\"gameInfo\"><h1>You are in the loo</h1><p>Welcome to our new adventure!<br>"
+        + "</head><body><div class=\"container\"><div id=\"gameInfo\"><h1>You are in the loo</h1>"
         + adventure.Begin()
         + "</p></div><form id=\"commandForm\" ><input id=\"command\" type=\"text\"/></form>"
         + "</div></body></html>";
