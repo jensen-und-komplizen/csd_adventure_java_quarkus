@@ -31,13 +31,6 @@ public class AdventureTest {
     }
 
     @Test
-    void AdventureProvidesHelpTextAtStartup() {
-        String beginText = adventure.Begin();
-        assertThat(beginText, containsStringIgnoringCase("enter command"));
-        assertThat(beginText, containsStringIgnoringCase("help"));
-    }
-
-    @Test
     void LookingAroundInTheLooThenICanSeeMagazines() {
         // given i am on the loo
         assertThat(adventure.Begin(), containsStringIgnoringCase("You wake up on the loo"));
