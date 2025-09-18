@@ -10,7 +10,7 @@ public abstract class AbstractRoom implements Room {
 
     @Override
     public String getHelp() {
-        return " If you want to restart, just try to 'commit suicide'.";
+        return " If you want to restart, just try to 'commit suicide'. If you're feeling lost use the command 'help'.";
     }
 
     private String formatCommand(String command) {
