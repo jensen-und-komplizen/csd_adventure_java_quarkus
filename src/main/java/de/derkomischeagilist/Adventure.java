@@ -102,8 +102,8 @@ public class Adventure {
             default:
                 return currentRoom.handleCommand(command);
         }
-        lastResponse = response;
-        return response;
+        lastResponse = lastResponse + "\n\n" + response;
+        return lastResponse;
     }
 
     public String Begin() {
