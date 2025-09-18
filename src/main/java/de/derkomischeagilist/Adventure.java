@@ -60,12 +60,15 @@ public class Adventure {
                 break;
             case "read jokes":
             case "look at jokes":
-                for(String joke : jokes) {
+                for (String joke : jokes) {
                     response = response + joke + "\n";
                 }
                 break;
             case "look around":
                 response = currentRoom.getDetailedDescription();
+                break;
+            case "look at coin":
+                response = getCoinDescription();
                 break;
             case "count":
                 counter++;
@@ -104,6 +107,10 @@ public class Adventure {
         }
         lastResponse = lastResponse + "\n\n" + response;
         return lastResponse;
+    }
+
+    private String getCoinDescription() {
+        return "Seems like a coin of Big Whoop!";
     }
 
     public String Begin() {

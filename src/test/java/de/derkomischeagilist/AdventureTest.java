@@ -86,6 +86,16 @@ public class AdventureTest {
     }
 
     @Test
+    void LookingAtCoinInTheLoo() {
+        // given i am on the loo
+        assertThat(adventure.Begin(), containsStringIgnoringCase("you wake up on the Loo"));
+        // When i look around
+        String actual = adventure.tell("look at coin");
+        // Then i can see magazines
+        assertThat(actual, containsString("Big Whoop"));
+    }
+
+    @Test
     void LookingAtMagazinesInTheLooThenICanSeeAUsedMickyMouseMagazine() {
         // given i am on the loo
         assertThat(adventure.Begin(), containsStringIgnoringCase("you wake up on the Loo"));
