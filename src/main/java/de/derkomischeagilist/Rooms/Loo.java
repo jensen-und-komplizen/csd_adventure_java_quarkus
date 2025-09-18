@@ -26,16 +26,17 @@ public class Loo extends AbstractRoom {
 
     public String getDetailedDescription() {
         return "You see a pretty dirty <span class=\"hint\">door</span> with some nasty <span class=\"hint\">jokes</span> on it. There are four pieces of <span class=\"hint\">toilet paper</span> "
-                + (coinPickedUp ? "" : "and a <span class=\"hint\">coin</span> " ) + "on the ground. Next to you are a few <span class=\"hint\">magazines</span>. "
+                + (coinPickedUp ? "" : "and a <span class=\"hint\">coin</span> ")
+                + "on the ground. Next to you are a few <span class=\"hint\">magazines</span>. "
                 + "In the corner of the room you see a shady looking guy, who seems to be a <span class=\"hint\">Scrum Master</span>."
-          + "<br/>"
-          + "In your pocket you find a card that says you are a \"Pathetic Scrum Developer (PSD)\"";
+                + "<br/>"
+                + "In your pocket you find a card that says you are a \"Pathetic Scrum Developer (PSD)\"";
     }
 
-    public String handleCommand(String command){
+    public String handleCommand(String command) {
 
         if (talkingToScrumMaster) {
-            switch (command.toLowerCase()){
+            switch (command.toLowerCase()) {
                 case "a":
                 case "definition of done":
                     coinScrumMaster = true;
@@ -50,7 +51,7 @@ public class Loo extends AbstractRoom {
                     return "You need to answer the riddle correctly my friend. Try again.";
             }
         }
-        switch(command.toLowerCase()) {
+        switch (command.toLowerCase()) {
             case "look at magazines":
                 return "You see a very much used Micky Mouse magazine, a very old and unusable playboy and what seems to be a <span class=\"hint\">Scrum Guide 2009</span> in mint condition.";
             case "read scrum guide 2009":
@@ -59,9 +60,12 @@ public class Loo extends AbstractRoom {
             case "look at toilet paper":
                 toiletPaperCount++;
                 switch (toiletPaperCount) {
-                    case 1: return "On the first piece is written: \"Scrum Master: Nobody ever comes to my retros... I need to get out of here.\" There are more pieces on the ground.";
-                    case 2: return "Another one states: \"A foo walks into a bar.\" More to read on the floor.";
-                    case 3: return "Next piece says: \"Product Owner: My developers are way too slow.\" There is one more piece on the ground.";
+                    case 1:
+                        return "On the first piece is written: \"Scrum Master: Nobody ever comes to my retros... I need to get out of here.\" There are more pieces on the ground.";
+                    case 2:
+                        return "Another one states: \"A foo walks into a bar.\" More to read on the floor.";
+                    case 3:
+                        return "Next piece says: \"Product Owner: My developers are way too slow.\" There is one more piece on the ground.";
                     case 4:
                         toiletPaperCount = 0;
                         return "On the last piece is written: \"Developers: We have too many meetings.\" I remember. I need to find my Scrum team to help them get out of here.";
@@ -80,7 +84,8 @@ public class Loo extends AbstractRoom {
                     return "\"You cannot learn anymore from me!.\"";
                 }
                 talkingToScrumMaster = true;
-                return "You talk to the shady looking Scrum Master. Manically he looks into your eyes and says: I am the Scrum Master and I have a riddle for you: \n" +
+                return "You talk to the shady looking Scrum Master. Manically he looks into your eyes and says: I am the Scrum Master and I have a riddle for you: \n"
+                        +
                         "What is part of the scrum framework?\n" +
                         "<span class=\"hint\">a) Definition of Done</span>\n" +
                         "<span class=\"hint\">b) Definition of Ready</span>\n" +
@@ -95,6 +100,7 @@ public class Loo extends AbstractRoom {
     }
 
     public String getHelp() {
-        return "Try to 'look around', 'look at magazines' (better get your gloves), 'look at door', 'look at toilet paper', 'pick up coin', 'talk to scrum master' 'read a joke' or just 'go to washroom' to escape the smell." + super.getHelp();
+        return "Try to 'look around', 'look at magazines' (better get your gloves), 'look at door', 'look at toilet paper', 'pick up coin', 'talk to scrum master' 'read a joke', 'look at coin' or just 'go to washroom' to escape the smell."
+                + super.getHelp();
     }
 }

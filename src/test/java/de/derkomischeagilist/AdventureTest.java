@@ -143,6 +143,13 @@ public class AdventureTest {
     }
 
     @Test
+    void EnteringHelpInLooCoinOnGround() {
+        assertThat(adventure.Begin(), containsStringIgnoringCase("you wake up on the Loo"));
+        String actual = adventure.tell("help");
+        assertThat(actual, containsStringIgnoringCase("look at coin"));
+    }
+
+    @Test
     void EnteringAnInvalidCommandStillIncludesPreviousResponse() {
         // given i am on the loo
         assertThat(adventure.Begin(), containsStringIgnoringCase("you wake up on the Loo"));
