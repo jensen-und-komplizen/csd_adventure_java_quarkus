@@ -304,6 +304,18 @@ public class AdventureTest {
     }
 
     @Test
+    void readJokes() {
+        String[] jokes = this.adventure.getJokes();
+        assertThat(adventure.Begin(), containsStringIgnoringCase("you wake up on the Loo"));
+        containsStringIgnoringCase("you wake up on the Loo");
+        assertThat(jokes.length, greaterThan(0));
+        for (int i = 0; i <= jokes.length - 1; i++) {
+            String actual = adventure.tell("read jokes");
+            assertThat(actual, containsStringIgnoringCase(jokes[i]));
+        }
+    }
+
+    @Test
     void commitSuicideInLoo() {
         // given I am on the loo
         assertThat(adventure.Begin(), containsStringIgnoringCase("you wake up on the Loo"));
