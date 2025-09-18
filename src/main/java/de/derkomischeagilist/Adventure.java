@@ -50,6 +50,8 @@ public class Adventure {
                 currentRoom = loo;
                 response = currentRoom.getDescription() + "\n\n" + currentRoom.getDetailedDescription();
                 break;
+            case "read jokes":
+            case "look at jokes":
             case "look at a joke":
             case "read a joke":
                 if (currentRoom == loo) {
@@ -58,12 +60,15 @@ public class Adventure {
                     response = "There is no joke in this room.";
                 }
                 break;
+<<<<<<< Updated upstream
             case "read jokes":
             case "look at jokes":
                 for (String joke : jokes) {
                     response = response + joke + "\n";
                 }
                 break;
+=======
+>>>>>>> Stashed changes
             case "look around":
                 response = currentRoom.getDetailedDescription();
                 break;
